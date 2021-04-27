@@ -62,10 +62,10 @@ const styles = StyleSheet.create({
   },
   text: {
     alignItems: "center",
-    fontWeight: "bold",
     letterSpacing: 1.1,
     fontSize: 16,
     fontFamily: "Verdana",
+    fontWeight: "200",
   },
 });
 Button.defaultProps = {

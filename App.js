@@ -15,7 +15,13 @@ const Stack = createStackNavigator();
 export const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator
+        screenOptions={{
+          headerStyle: { elevation: 0 },
+          cardStyle: { backgroundColor: "#05668D" },
+        }}
+        initialRouteName="Home"
+      >
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Developer" component={DevScreen} />
         <Stack.Screen name="Tester" component={TestScreen} />
