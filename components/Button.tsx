@@ -65,6 +65,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     letterSpacing: 1.1,
     fontSize: 16,
+    fontFamily: "Verdana",
   },
 });
 Button.defaultProps = {
