@@ -15,6 +15,7 @@ export const TestScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView}>
+        <Text style={styles.sectionTitle}>Software Tester</Text>
         <View style={styles.imageContainer}>
           <Image
             style={styles.image}
@@ -43,10 +44,10 @@ export const TestScreen = () => {
             {testContent.QualificationsDetails}
           </Text>
           <Text
-            style={styles.sectionText}
+            style={styles.sectionLink}
             onPress={() => Linking.openURL(testContent.QualificationsLink)}
           >
-            {testContent.QualificationsLink}
+            Apprenticeship Standards
           </Text>
         </View>
       </ScrollView>
@@ -89,6 +90,23 @@ const styles = StyleSheet.create({
   },
   sectionText: {
     color: "#000000",
+    fontSize: 15,
+    textAlign: "justify",
+    paddingBottom: 20,
+    fontWeight: "400",
+    paddingLeft: 20,
+    paddingRight: 20,
+  },
+  sectionTitle: {
+    color: "#ffff",
+    fontSize: 30,
+    fontWeight: "bold",
+    textAlign: "center",
+    paddingBottom: 20,
+    marginTop: 20,
+  },
+  sectionLink: {
+    color: "#02c39a",
     fontSize: 15,
     textAlign: "justify",
     paddingBottom: 20,

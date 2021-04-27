@@ -15,6 +15,7 @@ export const DevScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView}>
+        <Text style={styles.sectionTitle}>Software Developer</Text>
         <View style={styles.imageContainer}>
           <Image
             style={styles.image}
@@ -45,10 +46,10 @@ export const DevScreen = () => {
             {developerContent.QualificationsDetails}
           </Text>
           <Text
-            style={styles.sectionText}
+            style={styles.sectionLink}
             onPress={() => Linking.openURL(developerContent.QualificationsLink)}
           >
-            {developerContent.QualificationsLink}
+            Apprenticeship Standards
           </Text>
         </View>
       </ScrollView>
@@ -97,5 +98,22 @@ const styles = StyleSheet.create({
     fontWeight: "400",
     paddingLeft: 20,
     paddingRight: 20,
+  },
+  sectionLink: {
+    color: "#02c39a",
+    fontSize: 15,
+    textAlign: "justify",
+    paddingBottom: 20,
+    fontWeight: "400",
+    paddingLeft: 20,
+    paddingRight: 20,
+  },
+  sectionTitle: {
+    color: "#ffff",
+    fontSize: 30,
+    fontWeight: "bold",
+    textAlign: "center",
+    paddingBottom: 20,
+    marginTop: 20,
   },
 });
