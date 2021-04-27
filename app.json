@@ -1,0 +1,12 @@
+{
+  "name": "We-Train-Apprentices",
+  "displayName": "We-Train-Apprentices",
+  "expo": {
+    "name": "We-Train-Apprentices",
+    "slug": "We-Train-Apprentices",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
