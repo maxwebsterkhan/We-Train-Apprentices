@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Modal } from "react-native";
 import Button from "../components/Button";
 import { questions } from "../assets/questions";
 import { CommonActions, useNavigation } from "@react-navigation/core";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { ScrollView } from "react-native-gesture-handler";
 
 export function QuizScreen() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
+  const [modalVisible, setModalVisible] = useState(false);
 
   const navigation = useNavigation();
 
@@ -29,32 +32,53 @@ export function QuizScreen() {
 
     const nextQuestion = currentQuestion + 1;
     if (nextQuestion < questions.length) {
-      setCurrentQuestion(nextQuestion);
+      setModalVisible(!modalVisible);
+      setTimeout(function () {
+        setCurrentQuestion(nextQuestion);
+        setModalVisible(false);
+      }, 3000);
     } else {
       setShowScore(true);
     }
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>
-        <Text>Question {currentQuestion + 1}</Text>
-        <Text>/{questions.length}</Text>
-      </Text>
-      <Text style={styles.questionText}>
-        <Text>{questions[currentQuestion].questionText}</Text>
-      </Text>
+    <SafeAreaView>
+      <ScrollView>
+        <View style={styles.container}>
+          <Text style={styles.title}>
+            <Text>Question {currentQuestion + 1}</Text>
+            <Text>/{questions.length}</Text>
+          </Text>
+          <Text style={styles.questionText}>
+            <Text>{questions[currentQuestion].questionText}</Text>
+          </Text>
 
-      {questions[currentQuestion].answerOptions.map((answerOption) => (
-        <Button
-          title={answerOption.answerText}
-          onPress={() => handleAnswerOptionClick(answerOption.isCorrect)}
-        ></Button>
-      ))}
-      <View>
-        <Button title={score.toString()} onPress={() => {}}></Button>
-      </View>
-    </View>
+          {questions[currentQuestion].answerOptions.map((answerOption) => (
+            <Button
+              title={answerOption.answerText}
+              onPress={() => handleAnswerOptionClick(answerOption.isCorrect)}
+            ></Button>
+          ))}
+          <View>
+            <Modal
+              style={styles.modal}
+              animationType="slide"
+              transparent={true}
+              visible={modalVisible}
+            >
+              <View style={styles.centeredView}>
+                <View style={styles.modal}>
+                  <Text style={styles.modalText}>
+                    {questions[currentQuestion].questionExplaination}
+                  </Text>
+                </View>
+              </View>
+            </Modal>
+          </View>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
@@ -77,6 +101,32 @@ const styles = StyleSheet.create({
     color: "#fff",
     marginBottom: 40,
     marginHorizontal: 20,
+    textAlign: "center",
+  },
+  modal: {
+    margin: 20,
+    backgroundColor: "white",
+    borderRadius: 20,
+    padding: 35,
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  centeredView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  modalText: {
+    fontSize: 24,
+    fontFamily: "Verdana",
+    color: "#0000",
     textAlign: "center",
   },
 });
