@@ -30,7 +30,7 @@ export function HomeScreen() {
         title="Quiz Results"
         onPress={() => navigation.navigate("Results")}
       />
-      <Button title="About Us" onPress={() => navigation.navigate("About")} />
+      <Button title="About" onPress={() => navigation.navigate("About")} />
     </View>
   );
 }
@@ -49,12 +49,12 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     width: "80%",
-    height: 74,
+    height: 75,
     marginBottom: 70,
   },
   title: {
     color: "#fff",
-    fontSize: 30,
+    fontSize: 32,
     marginBottom: 20,
   },
 });

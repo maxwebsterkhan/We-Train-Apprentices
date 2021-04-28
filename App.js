@@ -17,12 +17,19 @@ export const App = () => {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{
-          headerStyle: { elevation: 0 },
+          headerStyle: {
+            elevation: 0,
+            backgroundColor: "#05668D",
+          },
           cardStyle: { backgroundColor: "#05668D" },
         }}
         initialRouteName="Home"
       >
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{ headerShown: false }}
+        />
         <Stack.Screen name="Developer" component={DevScreen} />
         <Stack.Screen name="Tester" component={TestScreen} />
         <Stack.Screen name="Quiz" component={QuizScreen} />
@@ -34,12 +41,3 @@ export const App = () => {
 };
 
 export default App;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});

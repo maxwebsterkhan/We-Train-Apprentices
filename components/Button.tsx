@@ -1,5 +1,11 @@
 import React from "react";
-import { StyleSheet, TouchableOpacity, Text } from "react-native";
+import {
+  StyleSheet,
+  TouchableOpacity,
+  Text,
+  StyleProp,
+  ViewStyle,
+} from "react-native";
 
 interface Props {
   title: string;
@@ -48,6 +54,9 @@ const Button = (props: Props) => {
 
 const styles = StyleSheet.create({
   container: {
+    paddingHorizontal: 30,
+    paddingVertical: 10,
+    minHeight: 51,
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 100,
@@ -72,7 +81,6 @@ Button.defaultProps = {
   backgroundColor: "#00A896",
   color: "#ffffff",
   width: "90%",
-  height: 51,
   margin: 5,
 };
 
