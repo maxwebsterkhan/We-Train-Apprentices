@@ -8,7 +8,7 @@ export const questions = [
       { answerText: "Testing.", isCorrect: false },
       { answerText: "Feasibility Study.", isCorrect: true },
     ],
-    questionExplaination:
+    questionExplanation:
       "Answer: D, These activities take place as part of the feasibility study itself and business case development, which takes place during the feasibility study stage of the SDLC.",
   },
   {
@@ -34,6 +34,7 @@ export const questions = [
         isCorrect: false,
       },
     ],
+    questionExplanation: "Answer: B"
   },
   {
     questionText:
@@ -44,6 +45,7 @@ export const questions = [
       { answerText: "d, b, a, c.", isCorrect: false },
       { answerText: "d, b, c, a.", isCorrect: false },
     ],
+    questionExplanation:"Answer: A" 
   },
   {
     questionText: "Which of the following is NOT an iterative methodology?",
@@ -53,6 +55,7 @@ export const questions = [
       { answerText: "Scrum.", isCorrect: false },
       { answerText: "Spiral.", isCorrect: false },
     ],
+    questionExplanation:"Answer: A"
   },
   {
     questionText: "Which of the following is NOT an iterative methodology?",
@@ -73,7 +76,7 @@ export const questions = [
       { answerText: "V-Model.", isCorrect: false },
       { answerText: "Waterfall.", isCorrect: false },
     ],
-    questionExplaination:
+    questionExplanation:
       "Answer: A, With the agile method, each feature is taken from start to finish within an iteration, with the software being released for deployment at the end of each iteration, or if appropriate even during an iteration.",
   },
 ];

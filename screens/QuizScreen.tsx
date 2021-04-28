@@ -53,7 +53,6 @@ export function QuizScreen() {
           <Text style={styles.questionText}>
             <Text>{questions[currentQuestion].questionText}</Text>
           </Text>
-
           {questions[currentQuestion].answerOptions.map((answerOption) => (
             <Button
               title={answerOption.answerText}
@@ -70,7 +69,7 @@ export function QuizScreen() {
               <View style={styles.centeredView}>
                 <View style={styles.modal}>
                   <Text style={styles.modalText}>
-                    {questions[currentQuestion].questionExplaination}
+                    {questions[currentQuestion].questionExplanation}
                   </Text>
                 </View>
               </View>
@@ -98,9 +97,19 @@ const styles = StyleSheet.create({
   questionText: {
     fontSize: 24,
     fontFamily: "Verdana",
-    color: "#fff",
-    marginBottom: 40,
-    marginHorizontal: 20,
+    color: "#ffffff",
+    textAlign: "center",
+  },
+
+  centeredView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  modalText: {
+    fontSize: 24,
+    fontFamily: "Verdana",
+    color: "#000000",
     textAlign: "center",
   },
   modal: {
@@ -117,16 +126,5 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 4,
     elevation: 5,
-  },
-  centeredView: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  modalText: {
-    fontSize: 24,
-    fontFamily: "Verdana",
-    color: "#0000",
-    textAlign: "center",
   },
 });
