@@ -56,6 +56,7 @@ const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 30,
     paddingVertical: 10,
+    fontFamily: "Verdana",
     minHeight: 51,
     alignItems: "center",
     justifyContent: "center",
@@ -82,6 +83,7 @@ Button.defaultProps = {
   color: "#ffffff",
   width: "90%",
   margin: 5,
+  fontFamily: "Verdana",
 };
 
 export default Button;

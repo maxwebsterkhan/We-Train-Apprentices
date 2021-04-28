@@ -51,7 +51,7 @@ export function QuizScreen() {
             <Text>/{questions.length}</Text>
           </Text>
           <Text style={styles.questionText}>
-            <Text>{questions[currentQuestion].questionText}</Text>
+            {questions[currentQuestion].questionText}
           </Text>
           {questions[currentQuestion].answerOptions.map((answerOption) => (
             <Button

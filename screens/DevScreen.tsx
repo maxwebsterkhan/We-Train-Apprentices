@@ -88,6 +88,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     paddingBottom: 20,
     marginTop: 20,
+    fontFamily: "Verdana",
   },
   sectionText: {
     color: "#000000",
@@ -97,6 +98,7 @@ const styles = StyleSheet.create({
     fontWeight: "400",
     paddingLeft: 20,
     paddingRight: 20,
+    fontFamily: "Verdana",
   },
   sectionLink: {
     color: "#02c39a",
@@ -106,6 +108,7 @@ const styles = StyleSheet.create({
     fontWeight: "400",
     paddingLeft: 20,
     paddingRight: 20,
+    fontFamily: "Verdana",
   },
   sectionTitle: {
     color: "#ffff",
@@ -114,5 +117,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
     paddingBottom: 20,
     marginTop: 20,
+    fontFamily: "Verdana",
   },
 });
