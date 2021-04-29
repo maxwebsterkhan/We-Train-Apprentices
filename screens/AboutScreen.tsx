@@ -10,61 +10,70 @@ import {
 import Button from "../components/Button";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 import HomeButton from "../components/HomeButton";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export function AboutScreen() {
   const navigation = useNavigation();
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>About</Text>
-      <View style={styles.imageContainer}>
-        <Image
-          style={styles.image}
-          source={require("../assets/logo.png")}
-          resizeMode="stretch"
-        />
-      </View>
-      <View style={styles.contentBlockContainer}>
-        <Text style={styles.sectionText}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,
-          velit! Perferendis delectus voluptatem quae, id repellendus fugiat
-          itaque neque debitis nobis ipsum dolorum obcaecati! Cum ducimus
-          excepturi repellendus! Laborum, iusto.
-        </Text>
-        <View style={styles.socialIconsContainer}>
-          <TouchableOpacity
-            onPress={() =>
-              Linking.openURL("https://www.linkedin.com/in/max-webster-khan")
-            }
-          >
+    <SafeAreaView>
+      <ScrollView>
+        <View style={styles.container}>
+          <Text style={styles.title}>About</Text>
+          <View style={styles.imageContainer}>
             <Image
-              style={styles.socialIcon}
-              source={require("../assets/LinkedIN.png")}
+              style={styles.image}
+              source={require("../assets/logo.png")}
               resizeMode="stretch"
             />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() =>
-              Linking.openURL(
-                "https://github.com/maxwebsterkhan/We-Train-Apprentices"
-              )
-            }
-          >
-            <Image
-              style={styles.socialIcon}
-              source={require("../assets/Github_black.png")}
-              resizeMode="stretch"
-            />
-          </TouchableOpacity>
+          </View>
+          <View style={styles.contentBlockContainer}>
+            <Text style={styles.sectionText}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Molestiae, velit! Perferendis delectus voluptatem quae, id
+              repellendus fugiat itaque neque debitis nobis ipsum dolorum
+              obcaecati! Cum ducimus excepturi repellendus! Laborum, iusto.
+            </Text>
+            <View style={styles.socialIconsContainer}>
+              <TouchableOpacity
+                onPress={() =>
+                  Linking.openURL(
+                    "https://www.linkedin.com/in/max-webster-khan"
+                  )
+                }
+              >
+                <Image
+                  style={styles.socialIcon}
+                  source={require("../assets/LinkedIN.png")}
+                  resizeMode="stretch"
+                />
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() =>
+                  Linking.openURL(
+                    "https://github.com/maxwebsterkhan/We-Train-Apprentices"
+                  )
+                }
+              >
+                <Image
+                  style={styles.socialIcon}
+                  source={require("../assets/Github_black.png")}
+                  resizeMode="stretch"
+                />
+              </TouchableOpacity>
+            </View>
+            <Text style={styles.socialText}>
+              Don't like the app? Let us know.
+            </Text>
+          </View>
+          <View style={styles.container}>
+            <HomeButton></HomeButton>
+          </View>
         </View>
-        <Text style={styles.socialText}>Don't like the app? Let us know.</Text>
-      </View>
-      <View style={styles.container}>
-        <HomeButton></HomeButton>
-      </View>
-    </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 const styles = StyleSheet.create({
@@ -72,6 +81,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    marginTop: 40,
   },
   image: {
     flex: 1,
@@ -83,7 +93,7 @@ const styles = StyleSheet.create({
   imageContainer: {
     width: "80%",
     height: 75,
-    marginBottom: 70,
+    marginBottom: 20,
   },
   title: {
     color: "#fff",

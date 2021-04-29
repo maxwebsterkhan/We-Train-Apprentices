@@ -1,14 +1,19 @@
 import { useNavigation } from "@react-navigation/core";
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import HomeButton from "../components/HomeButton";
+import { TokenContext } from "./TokenProvider";
 
-export function QuizResultsScreen() {
-  const navigation = useNavigation();
+type Props = {
+  score: Number;
+};
+
+export function QuizResultsScreen({ score }: Props) {
+  console.log(score);
   return (
     <View style={styles.centeredView}>
       <View style={styles.modal}>
-        <Text style={styles.modalText}>You Scored 5/5</Text>
+        <Text style={styles.modalText}>You Scored {score}/5</Text>
       </View>
       <HomeButton></HomeButton>
     </View>

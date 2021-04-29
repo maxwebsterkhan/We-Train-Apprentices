@@ -88,7 +88,7 @@ app.get("/results", (req: Request, res: Response) => {
     } else {
       res.json(Results);
     }
-  });
+  }).limit(5);
 });
 
 // USERS

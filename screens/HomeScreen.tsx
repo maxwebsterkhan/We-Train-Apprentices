@@ -24,7 +24,6 @@ export function HomeScreen() {
         title="Knowledge Test"
         onPress={() => navigation.navigate("Quiz")}
       />
-
       <Button title="About" onPress={() => navigation.navigate("About")} />
     </View>
   );

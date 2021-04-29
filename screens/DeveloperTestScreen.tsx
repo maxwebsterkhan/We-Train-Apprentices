@@ -1,31 +1,29 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { StyleSheet, Text, View, Modal } from "react-native";
 import Button from "../components/Button";
 import { questions } from "../assets/questions";
 import { CommonActions, useNavigation } from "@react-navigation/core";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ScrollView } from "react-native-gesture-handler";
+import { TokenContext } from "./TokenProvider";
 
 export function DeveloperTestScreen() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
   const [modalVisible, setModalVisible] = useState(false);
+  const { token } = useContext(TokenContext);
 
   const navigation = useNavigation();
 
   useEffect(() => {
     if (showScore == true) {
-      navigation.dispatch(
-        CommonActions.reset({
-          routes: [{ name: "Home" }, { name: "Results" }],
-        })
-      );
+      navigation.navigate("Results", { score });
       setShowScore(false);
     }
   }, [showScore]);
 
-  const handleAnswerOptionClick = (isCorrect) => {
+  const handleAnswerOptionClick = async (isCorrect: boolean) => {
     if (isCorrect) {
       setScore(score + 1);
     }
@@ -36,10 +34,22 @@ export function DeveloperTestScreen() {
       setTimeout(function () {
         setCurrentQuestion(nextQuestion);
         setModalVisible(false);
-      }, 3000);
+      }, 500);
     } else {
+      const response = await fetch("http://10.0.2.2:3002/results", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          Authorization: token,
+        },
+        body: JSON.stringify({
+          result: score,
+        }),
+      });
+      console.log(`Saved results ${response.status} ${response.text}`);
       setModalVisible(!modalVisible);
-      setTimeout(function () {
+      setTimeout(async () => {
         setShowScore(true);
         setModalVisible(false);
       }, 3000);

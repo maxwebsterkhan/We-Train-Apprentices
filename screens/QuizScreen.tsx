@@ -10,6 +10,7 @@ export function QuizScreen() {
 
   return (
     <View style={styles.container}>
+      <Text style={styles.title}>Knowledge Test</Text>
       <View style={styles.imageContainer}>
         <Image
           style={styles.image}
