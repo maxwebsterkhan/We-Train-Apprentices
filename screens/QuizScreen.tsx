@@ -38,7 +38,11 @@ export function QuizScreen() {
         setModalVisible(false);
       }, 3000);
     } else {
-      setShowScore(true);
+      setModalVisible(!modalVisible);
+      setTimeout(function () {
+        setShowScore(true);
+        setModalVisible(false);
+      }, 3000);
     }
   };
 
@@ -99,6 +103,7 @@ const styles = StyleSheet.create({
     fontFamily: "Verdana",
     color: "#ffffff",
     textAlign: "center",
+    marginBottom: 40,
   },
 
   centeredView: {

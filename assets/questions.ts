@@ -65,7 +65,7 @@ export const questions = [
       { answerText: "Scrum.", isCorrect: false },
       { answerText: "Spiral.", isCorrect: false },
     ],
-    questionExplaination:
+    questionExplanation:
       "Answer: A, The waterfall method is sequential not iterative. Iterative development contrasts with a traditional waterfall method in which each stage of the software development life cycle is “gated.” For waterfall development coding doesn’t begin until design of the entire software application is complete and has gone through a stage gate review. Likewise, testing doesn’t begin until coding is complete and has passed necessary phase gate reviews.",
   },
   {

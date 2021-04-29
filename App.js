@@ -9,6 +9,9 @@ import { TestScreen } from "./screens/TestScreen";
 import { QuizScreen } from "./screens/QuizScreen";
 import { QuizResultsScreen } from "./screens/QuizResultsScreen";
 import { AboutScreen } from "./screens/AboutScreen";
+import { ApprenticeshipsScreen } from "./screens/ApprenticeshipsScreen";
+import { KnowledgeTestScreen } from "./screens/KnowledgeTestScreen";
+import { PreviousResultsScreen } from "./screens/PreviousResultsScreen";
 
 const Stack = createStackNavigator();
 
@@ -34,7 +37,16 @@ export const App = () => {
         <Stack.Screen name="Tester" component={TestScreen} />
         <Stack.Screen name="Quiz" component={QuizScreen} />
         <Stack.Screen name="Results" component={QuizResultsScreen} />
+        <Stack.Screen
+          name="PreviousResults"
+          component={PreviousResultsScreen}
+        />
         <Stack.Screen name="About" component={AboutScreen} />
+        <Stack.Screen name="KnowledgeTest" component={KnowledgeTestScreen} />
+        <Stack.Screen
+          name="Apprenticeships"
+          component={ApprenticeshipsScreen}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

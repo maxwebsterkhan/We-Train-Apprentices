@@ -4,11 +4,12 @@ import Button from "../components/Button";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
-export function HomeScreen() {
+export function ApprenticeshipsScreen() {
   const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
+      <Text style={styles.title}>Apprenticeships</Text>
       <View style={styles.imageContainer}>
         <Image
           style={styles.image}
@@ -17,15 +18,13 @@ export function HomeScreen() {
         />
       </View>
       <Button
-        title="Apprenticeships"
-        onPress={() => navigation.navigate("Apprenticeships")}
+        title="Software Developer Information"
+        onPress={() => navigation.navigate("Developer")}
       />
       <Button
-        title="Knowledge Test"
-        onPress={() => navigation.navigate("KnowledgeTest")}
+        title="Software Tester Information"
+        onPress={() => navigation.navigate("Tester")}
       />
-
-      <Button title="About" onPress={() => navigation.navigate("About")} />
     </View>
   );
 }

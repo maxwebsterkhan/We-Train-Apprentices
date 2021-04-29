@@ -4,11 +4,12 @@ import Button from "../components/Button";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
-export function HomeScreen() {
+export function KnowledgeTestScreen() {
   const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
+      <Text style={styles.title}>Knowledge Test</Text>
       <View style={styles.imageContainer}>
         <Image
           style={styles.image}
@@ -16,16 +17,11 @@ export function HomeScreen() {
           resizeMode="stretch"
         />
       </View>
+      <Button title="Take Quiz" onPress={() => navigation.navigate("Quiz")} />
       <Button
-        title="Apprenticeships"
-        onPress={() => navigation.navigate("Apprenticeships")}
+        title="Past 5 Quiz Results"
+        onPress={() => navigation.navigate("PreviousResults")}
       />
-      <Button
-        title="Knowledge Test"
-        onPress={() => navigation.navigate("KnowledgeTest")}
-      />
-
-      <Button title="About" onPress={() => navigation.navigate("About")} />
     </View>
   );
 }
