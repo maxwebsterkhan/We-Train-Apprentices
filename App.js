@@ -12,6 +12,7 @@ import { AboutScreen } from "./screens/AboutScreen";
 import { ApprenticeshipsScreen } from "./screens/ApprenticeshipsScreen";
 import { KnowledgeTestScreen } from "./screens/KnowledgeTestScreen";
 import { PreviousResultsScreen } from "./screens/PreviousResultsScreen";
+import { DeveloperTestScreen } from "./screens/DeveloperTestScreen";
 
 const Stack = createStackNavigator();
 
@@ -33,19 +34,50 @@ export const App = () => {
           component={HomeScreen}
           options={{ headerShown: false }}
         />
-        <Stack.Screen name="Developer" component={DevScreen} />
-        <Stack.Screen name="Tester" component={TestScreen} />
-        <Stack.Screen name="Quiz" component={QuizScreen} />
-        <Stack.Screen name="Results" component={QuizResultsScreen} />
+        <Stack.Screen
+          name="Developer"
+          component={DevScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Tester"
+          component={TestScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Quiz"
+          component={QuizScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Results"
+          component={QuizResultsScreen}
+          options={{ headerShown: false }}
+        />
         <Stack.Screen
           name="PreviousResults"
           component={PreviousResultsScreen}
+          options={{ headerShown: false }}
         />
-        <Stack.Screen name="About" component={AboutScreen} />
-        <Stack.Screen name="KnowledgeTest" component={KnowledgeTestScreen} />
+        <Stack.Screen
+          name="About"
+          component={AboutScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="KnowledgeTest"
+          component={KnowledgeTestScreen}
+          options={{ headerShown: false }}
+        />
         <Stack.Screen
           name="Apprenticeships"
           component={ApprenticeshipsScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="DeveloperTestScreen"
+          component={DeveloperTestScreen}
+          options={{ headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>

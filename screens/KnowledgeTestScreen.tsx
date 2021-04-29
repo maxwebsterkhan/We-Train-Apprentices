@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, StatusBar, Image } from "react-native";
 import Button from "../components/Button";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import HomeButton from "../components/HomeButton";
 
 export function KnowledgeTestScreen() {
   const navigation = useNavigation();
@@ -22,6 +23,7 @@ export function KnowledgeTestScreen() {
         title="Past 5 Quiz Results"
         onPress={() => navigation.navigate("PreviousResults")}
       />
+      <HomeButton></HomeButton>
     </View>
   );
 }

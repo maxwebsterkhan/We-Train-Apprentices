@@ -10,6 +10,7 @@ import {
   Linking,
 } from "react-native";
 import { testContent } from "../assets/content";
+import HomeButton from "../components/HomeButton";
 
 export const TestScreen = () => {
   return (
@@ -49,6 +50,7 @@ export const TestScreen = () => {
           >
             Apprenticeship Standards
           </Text>
+          <HomeButton></HomeButton>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -78,6 +80,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#ffff",
     marginTop: 20,
     borderRadius: 8,
+    flex: 1,
+    alignItems: "center",
   },
   sectionHeading: {
     color: "#000000",

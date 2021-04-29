@@ -22,7 +22,7 @@ export function HomeScreen() {
       />
       <Button
         title="Knowledge Test"
-        onPress={() => navigation.navigate("KnowledgeTest")}
+        onPress={() => navigation.navigate("Quiz")}
       />
 
       <Button title="About" onPress={() => navigation.navigate("About")} />

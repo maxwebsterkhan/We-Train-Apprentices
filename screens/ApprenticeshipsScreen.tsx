@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, StatusBar, Image } from "react-native";
 import Button from "../components/Button";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import HomeButton from "../components/HomeButton";
 
 export function ApprenticeshipsScreen() {
   const navigation = useNavigation();
@@ -25,6 +26,7 @@ export function ApprenticeshipsScreen() {
         title="Software Tester Information"
         onPress={() => navigation.navigate("Tester")}
       />
+      <HomeButton></HomeButton>
     </View>
   );
 }

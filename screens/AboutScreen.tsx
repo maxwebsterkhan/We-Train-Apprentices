@@ -11,6 +11,7 @@ import Button from "../components/Button";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import HomeButton from "../components/HomeButton";
 
 export function AboutScreen() {
   const navigation = useNavigation();
@@ -59,6 +60,7 @@ export function AboutScreen() {
           </TouchableOpacity>
         </View>
         <Text style={styles.socialText}>Don't like the app? Let us know.</Text>
+        <HomeButton></HomeButton>
       </View>
     </View>
   );
@@ -108,6 +110,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     marginTop: 20,
     color: "#000000",
+    paddingVertical: 20,
   },
   socialIconsContainer: {
     display: "flex",
