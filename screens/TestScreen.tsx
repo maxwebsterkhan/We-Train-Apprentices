@@ -17,14 +17,14 @@ export const TestScreen = () => {
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView}>
         <Text style={styles.sectionTitle}>Software Tester</Text>
-        <View style={styles.imageContainer}>
-          <Image
-            style={styles.image}
-            source={require("../assets/2.jpg")}
-            resizeMode="stretch"
-          />
-        </View>
         <View style={styles.contentBlockContainer}>
+          <View style={styles.imageContainer}>
+            <Image
+              style={styles.image}
+              source={require("../assets/4.jpg")}
+              resizeMode="stretch"
+            />
+          </View>
           <Text style={styles.sectionHeading}>
             {testContent.RoleProfileTitle}
           </Text>
@@ -32,12 +32,26 @@ export const TestScreen = () => {
             {testContent.RoleProfileContent}
           </Text>
           <Text style={styles.sectionText}>{testContent.TypicalRoles}</Text>
+          <View style={styles.imageContainer}>
+            <Image
+              style={styles.image}
+              source={require("../assets/5.jpg")}
+              resizeMode="stretch"
+            />
+          </View>
           <Text style={styles.sectionHeading}>
             {testContent.EnterRequirementsTitle}
           </Text>
           <Text style={styles.sectionText}>
             {testContent.EntryRequirements}
           </Text>
+          <View style={styles.imageContainer}>
+          <Image
+            style={styles.image}
+            source={require("../assets/6.jpg")}
+            resizeMode="stretch"
+          />
+        </View>
           <Text style={styles.sectionHeading}>
             {testContent.QualificationsTitle}
           </Text>
@@ -72,8 +86,9 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   imageContainer: {
-    width: "100%",
+    width: "90%",
     height: 240,
+    paddingVertical: 20
   },
   contentBlockContainer: {
     width: "100%",

@@ -106,6 +106,7 @@ const styles = StyleSheet.create({
     color: "#ffffff",
     textAlign: "center",
     marginBottom: 40,
+    marginHorizontal: 40,
   },
   centeredView: {
     flex: 1,

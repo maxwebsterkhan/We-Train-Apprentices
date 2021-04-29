@@ -60,6 +60,8 @@ export function AboutScreen() {
           </TouchableOpacity>
         </View>
         <Text style={styles.socialText}>Don't like the app? Let us know.</Text>
+      </View>
+      <View style={styles.container}>
         <HomeButton></HomeButton>
       </View>
     </View>

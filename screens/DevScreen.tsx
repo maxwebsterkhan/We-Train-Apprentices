@@ -17,14 +17,15 @@ export const DevScreen = () => {
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView}>
         <Text style={styles.sectionTitle}>Software Developer</Text>
-        <View style={styles.imageContainer}>
-          <Image
-            style={styles.image}
-            source={require("../assets/1.jpg")}
-            resizeMode="stretch"
-          />
-        </View>
+
         <View style={styles.contentBlockContainer}>
+          <View style={styles.imageContainer}>
+            <Image
+              style={styles.image}
+              source={require("../assets/1.jpg")}
+              resizeMode="stretch"
+            />
+          </View>
           <Text style={styles.sectionHeading}>
             {developerContent.RoleProfileTitle}
           </Text>
@@ -34,12 +35,26 @@ export const DevScreen = () => {
           <Text style={styles.sectionText}>
             {developerContent.TypicalRoles}
           </Text>
+          <View style={styles.imageContainer}>
+            <Image
+              style={styles.image}
+              source={require("../assets/2.jpg")}
+              resizeMode="stretch"
+            />
+          </View>
           <Text style={styles.sectionHeading}>
             {developerContent.EnterRequirementsTitle}
           </Text>
           <Text style={styles.sectionText}>
             {developerContent.EntryRequirements}
           </Text>
+          <View style={styles.imageContainer}>
+            <Image
+              style={styles.image}
+              source={require("../assets/3.jpg")}
+              resizeMode="stretch"
+            />
+          </View>
           <Text style={styles.sectionHeading}>
             {developerContent.QualificationsTitle}
           </Text>
@@ -74,8 +89,9 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   imageContainer: {
-    width: "100%",
+    width: "90%",
     height: 240,
+    paddingVertical: 20
   },
   contentBlockContainer: {
     width: "100%",
@@ -84,6 +100,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     flex: 1,
     alignItems: "center",
+   
   },
   sectionHeading: {
     color: "#000000",
