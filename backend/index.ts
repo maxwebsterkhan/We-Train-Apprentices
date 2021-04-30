@@ -84,14 +84,15 @@ app.post("/results", (req: Request, res: Response) => {
 
 // FETCH RESULTS
 
-app.get("/results", (req: Request, res: Response) => {
-  Results.find((err: Error, Results: Request) => {
-    if (err) {
-      res.send("Error while fetching Results");
-    } else {
-      res.json(Results);
-    }
-  }).limit(5);
+app.get("/results", async (req: Request, res: Response) => {
+  try {
+    const results = await Results.find().limit(5).sort({ $natural: -1 });
+    console.log("these are the", { results });
+    res.send(results);
+  } catch (err) {
+    console.log("error is", { err });
+    res.status(500).send("Error: Results not found");
+  }
 });
 
 // User log in

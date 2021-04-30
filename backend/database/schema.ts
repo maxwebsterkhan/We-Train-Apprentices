@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 const resultsSchema = new mongoose.Schema({
   result: Number,
+  numberOfQuestions: Number,
 });
 
 const usersSchema = new mongoose.Schema({
