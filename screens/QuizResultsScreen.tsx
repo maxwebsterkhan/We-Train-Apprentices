@@ -1,19 +1,31 @@
 import { useNavigation } from "@react-navigation/core";
+import { StackScreenProps } from "@react-navigation/stack";
 import React, { useContext, useEffect, useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
+import { Results } from "../backend/database/schema";
 import HomeButton from "../components/HomeButton";
 import { TokenContext } from "./TokenProvider";
 
-type Props = {
-  score: Number;
+export type ScreenParamList = {
+  Results: {
+    score: Number;
+    numberOfQuestions: Number;
+  };
 };
 
-export function QuizResultsScreen({ score }: Props) {
-  console.log(score);
+type Props = StackScreenProps<ScreenParamList, "Results">;
+
+export function QuizResultsScreen({ route }: Props) {
+  const { token } = useContext(TokenContext);
+  const { score } = route.params;
+  const { numberOfQuestions } = route.params;
+
   return (
     <View style={styles.centeredView}>
       <View style={styles.modal}>
-        <Text style={styles.modalText}>You Scored {score}/5</Text>
+        <Text style={styles.modalText}>
+          You Scored {score}/{numberOfQuestions}
+        </Text>
       </View>
       <HomeButton></HomeButton>
     </View>

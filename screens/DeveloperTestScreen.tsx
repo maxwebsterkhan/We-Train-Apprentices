@@ -6,19 +6,23 @@ import { CommonActions, useNavigation } from "@react-navigation/core";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ScrollView } from "react-native-gesture-handler";
 import { TokenContext } from "./TokenProvider";
+import { StackScreenProps } from "@react-navigation/stack";
 
 export function DeveloperTestScreen() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
   const [modalVisible, setModalVisible] = useState(false);
+  const [numberOfQuestions, setNumberOfQuestions] = useState(questions.length);
+
   const { token } = useContext(TokenContext);
 
   const navigation = useNavigation();
 
   useEffect(() => {
     if (showScore == true) {
-      navigation.navigate("Results", { score });
+      navigation.navigate("Results", { score, numberOfQuestions });
+
       setShowScore(false);
     }
   }, [showScore]);
@@ -34,7 +38,7 @@ export function DeveloperTestScreen() {
       setTimeout(function () {
         setCurrentQuestion(nextQuestion);
         setModalVisible(false);
-      }, 500);
+      }, 3000);
     } else {
       const response = await fetch("http://10.0.2.2:3002/results", {
         method: "POST",
@@ -45,6 +49,7 @@ export function DeveloperTestScreen() {
         },
         body: JSON.stringify({
           result: score,
+          numberOfQuestions: numberOfQuestions,
         }),
       });
       console.log(`Saved results ${response.status} ${response.text}`);

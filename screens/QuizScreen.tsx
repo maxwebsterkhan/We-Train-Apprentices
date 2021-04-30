@@ -22,6 +22,10 @@ export function QuizScreen() {
         title="Developer Quiz"
         onPress={() => navigation.navigate("DeveloperTestScreen")}
       />
+      <Button
+        title="Previous Results"
+        onPress={() => navigation.navigate("PreviousResultsScreen")}
+      />
       <HomeButton></HomeButton>
     </View>
   );

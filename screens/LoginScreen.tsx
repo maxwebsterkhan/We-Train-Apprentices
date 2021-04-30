@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/core";
 import React, { useContext, useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { Image, StyleSheet, View } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 import Button from "../components/Button";
 import { TokenContext } from "./TokenProvider";
@@ -13,6 +13,13 @@ export function LoginScreen() {
 
   return (
     <View style={styles.container}>
+      <View style={styles.imageContainer}>
+        <Image
+          style={styles.image}
+          source={require("../assets/logo.png")}
+          resizeMode="stretch"
+        />
+      </View>
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
@@ -53,7 +60,7 @@ export function LoginScreen() {
             const token = await response.text();
             console.log("Login pass " + token);
             setToken(token);
-            navigation.navigate("Home")
+            navigation.navigate("Home");
           } else {
             console.log("Login failed");
           }
@@ -89,6 +96,8 @@ const styles = StyleSheet.create({
     fontSize: 32,
     marginBottom: 20,
     fontFamily: "Verdana",
+    alignItems: "center",
+    justifyContent: "center",
   },
   inputView: {
     backgroundColor: "#fff",
@@ -96,7 +105,9 @@ const styles = StyleSheet.create({
     width: "90%",
     height: 45,
     marginBottom: 20,
+
     alignItems: "center",
+    justifyContent: "center",
   },
   TextInput: {
     height: 50,
@@ -104,5 +115,19 @@ const styles = StyleSheet.create({
     padding: 10,
     marginLeft: 20,
     textAlign: "center",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  image: {
+    flex: 1,
+    width: undefined,
+    height: undefined,
+    resizeMode: "cover",
+    borderRadius: 8,
+  },
+  imageContainer: {
+    width: "80%",
+    height: 75,
+    marginBottom: 20,
   },
 });

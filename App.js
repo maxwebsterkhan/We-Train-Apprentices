@@ -58,7 +58,7 @@ export const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="PreviousResults"
+            name="PreviousResultsScreen"
             component={PreviousResultsScreen}
             options={{ headerShown: false }}
           />
