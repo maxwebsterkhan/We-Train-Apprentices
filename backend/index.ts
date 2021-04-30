@@ -23,6 +23,8 @@ mongoose.connect(dbConnection, {
   useUnifiedTopology: true,
 });
 
+// Open DB connection
+
 var db = mongoose.connection;
 db.on("open", () => {
   console.log("Connected to mongoDB");
@@ -65,6 +67,7 @@ app.use(function (req, res, next) {
 });
 
 // add Result
+
 app.post("/results", (req: Request, res: Response) => {
   let newResult = new Results({ ...req.body });
 
@@ -91,7 +94,7 @@ app.get("/results", (req: Request, res: Response) => {
   }).limit(5);
 });
 
-// USERS
+// User log in
 
 app.post("/login", (req: Request, res: Response) => {
   if (!req.body.email || !req.body.password) {
@@ -102,6 +105,9 @@ app.post("/login", (req: Request, res: Response) => {
     email: req.body.email,
     password: req.body.password,
   });
+
+  //  Authentication
+
   query.findOne((err: any, user: any) => {
     if (err) {
       res.status(401).send("Error: Not authenticated");
@@ -118,20 +124,23 @@ app.post("/login", (req: Request, res: Response) => {
   });
 });
 
+// Create user
+
 app.post("/user", (req: Request, res: Response) => {
   let newUser = new Users({ ...req.body });
 
   newUser.save((err: Error) => {
     if (err) {
       console.log(err);
-      res.send("Error while adding Result");
+      res.send("Error while adding user");
     } else {
       console.log(newUser);
-      res.send("Result added");
+      res.send("User added");
     }
   });
 });
 
+// Port runs on...
 app.listen(3002, () => {
   console.log("Server started on port 3002");
 });
