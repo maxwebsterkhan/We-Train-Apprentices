@@ -5739,11 +5739,6 @@
   "resolved" "https://registry.npmjs.org/react-native-screens/-/react-native-screens-3.1.1.tgz"
   "version" "3.1.1"
 
-"react-native-sqlite-storage@^5.0.0":
-  "integrity" "sha512-c1Joq3/tO1nmIcP8SkRZNolPSbfvY8uZg5lXse0TmjIPC0qHVbk96IMvWGyly1TmYCIpxpuDRc0/xCffDbYIvg=="
-  "resolved" "https://registry.npmjs.org/react-native-sqlite-storage/-/react-native-sqlite-storage-5.0.0.tgz"
-  "version" "5.0.0"
-
 "react-native-unimodules@~0.13.3":
   "integrity" "sha512-fjbNbAcvJHF8Ywqe77oveRW1WfaAKCQGV4a3Fxgpai17oNHq1LFwwKw0crFo0k7Njm5u7kCMVNbm9ZILNBfABQ=="
   "resolved" "https://registry.yarnpkg.com/react-native-unimodules/-/react-native-unimodules-0.13.3.tgz"
@@ -5785,7 +5780,7 @@
     "prop-types" "^15.6.0"
     "react-timer-mixin" "^0.13.4"
 
-"react-native@*", "react-native@>=0.14.0", "react-native@>=0.42.0", "react-native@>=0.57", "react-native@>=0.62.0-rc.0 <0.64.0", "react-native@~0.63.4":
+"react-native@*", "react-native@>=0.42.0", "react-native@>=0.57", "react-native@>=0.62.0-rc.0 <0.64.0", "react-native@~0.63.4":
   "integrity" "sha512-I4kM8kYO2mWEYUFITMcpRulcy4/jd+j9T6PbIzR0FuMcz/xwd+JwHoLPa1HmCesvR1RDOw9o4D+OFLwuXXfmGw=="
   "resolved" "https://registry.yarnpkg.com/react-native/-/react-native-0.63.4.tgz"
   "version" "0.63.4"
